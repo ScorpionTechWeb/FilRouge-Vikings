@@ -14,6 +14,6 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 
     <!-- My Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
 </head>

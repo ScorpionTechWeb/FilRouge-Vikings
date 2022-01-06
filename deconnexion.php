@@ -1,8 +1,14 @@
-<!-- On detruit la session start -->
 <?php
-session_start();
-session_unset();
-session_destroy();
-header('Location: index.php');
-exit();
+    /*-----------------------------------------------------
+                        Session :
+    -----------------------------------------------------*/
+    //demarrage de la session
+    session_start();
+    //deconnexion suppression des supers globales
+    session_destroy();
+    /*-----------------------------------------------------
+                        Redirection :
+    -----------------------------------------------------*/
+    //redirection vers la page login en mode deconnecte
+    header("Location: login.php?deconnected");
 ?>

@@ -39,5 +39,3 @@ function getComments($postId)
 
     return $comments;
 }
-
-

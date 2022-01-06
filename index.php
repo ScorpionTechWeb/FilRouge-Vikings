@@ -15,7 +15,7 @@ include('includes/head.php');
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
                     <a class="navbar-brand" href="#">
-                        <img src="img/logo.png" alt="Logo Image" class="img-fluid" width="36"
+                        <img src="assets/img/logo.png" alt="Logo Image" class="img-fluid" width="36"
                             style="max-width: 100%; height: auto">
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -113,13 +113,13 @@ include('includes/head.php');
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item">
-                    <img src="img/wallpaper01.jpg" alt="">
+                    <img src="assets/img/wallpaper01.jpg" alt="">
                 </div>
                 <div class="carousel-item active">
-                    <img src="img/wallpaper02.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/wallpaper02.jpg" alt="" class="img-fluid">
                 </div>
                 <div class="carousel-item">
-                    <img src="img/wallpaper03.jpg" alt="" class="img-fluid">
+                    <img src="assets/img/wallpaper03.jpg" alt="" class="img-fluid">
                 </div>
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
@@ -160,10 +160,10 @@ include('includes/head.php');
                         sur
                         W9, au Québec, depuis le 1er novembre 2013 sur Super Écran.
                     </p>
-                    <img alt="Histoire 01" src="img/histoire02.jpg" class="img-fluid" />
+                    <img alt="Histoire 01" src="assets/img/histoire02.jpg" class="img-fluid" />
                 </div>
                 <div class="col-md-6 p-3">
-                    <img alt="Histoire 02" src="img/histoire01.jpg" class="img-fluid" />
+                    <img alt="Histoire 02" src="assets/img/histoire01.jpg" class="img-fluid" />
                     <p>
                         Les exploits d'un groupe de Vikings mené par Ragnar Lothbrok, l'un des vikings les plus
                         populaires de tous les temps au destin semi-légendaire, sont narrés par la série. Ragnar serait
@@ -203,7 +203,7 @@ include('includes/head.php');
                 ?>
                 <div class="col p-3">
                     <div class="card" style="width: 18rem;">
-                        <img src="<?php echo $donnees['image_actor']; ?>" class="card-img-top" alt="...">
+                        <img src="assets/<?php echo $donnees['image_actor']; ?>" class="card-img-top" alt="...">
                         <div class="card-body-home">
                             <h5 class="card-title">Acteur: <?php echo $donnees['name_actor']; ?> </h5>
                             <p class="card-text"><?php echo $donnees['description_actor']; ?>
@@ -253,14 +253,14 @@ include('includes/head.php');
         </svg>
     </button>
     <!-- JS Files Bootstrap-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    <script src="assets/https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+    <script src="assets/https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
         integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"
         async></script>
     <!-- Mon Custom JS -->
-    <script type="text/javascript" src="js/custom.js"></script>
+    <script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
 
 </html>
