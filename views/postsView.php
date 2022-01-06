@@ -10,7 +10,7 @@
                                 <div class="col-xs-12 col-sm-4">
                                     <div class="card">
                                         <a class="img-card" href="#">
-                                            <img src="<?= $data['picture_article'] ?>" />
+                                            <img src="assets/<?= $data['picture_article'] ?>" />
                                         </a>
                                         <h3>Le <?= $data['creation_date_fr'] ?></h3>
                                         <p style="text-align: left; margin-left: 10px;">

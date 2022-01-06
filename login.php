@@ -7,6 +7,10 @@
     -----------------------------------------------------*/
     //création de la session
     session_start();
+    if(isset($_SESSION['connected'])) {
+    header("Location: index.php");
+    exit;
+    }   
     /*-----------------------------------------------------
                         Imports :
     -----------------------------------------------------*/        
@@ -35,7 +39,7 @@
         $login = $_POST['login_user'];
         $mdp = $_POST['mdp_user'];
         //Nouvelle instance de User
-        $user = new User("", "", "$login", "$mdp");
+        $user = new User("", "", "$login", "$mdp","");
         //chiffrage du mot de passe en md
         $user->cryptMdp();
         //test si le compte existe (login)

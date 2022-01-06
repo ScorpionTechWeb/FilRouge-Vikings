@@ -39,7 +39,7 @@ include('includes/head.php');
                             </li>
                         </ul>
                         <?php
-                        if (isset($_SESSION['username'])) {
+                        if (isset($_SESSION['connected'])) {
                         ?>
                         <div class="clearfix">
                             <a href="espace-membre.php" class="login">
@@ -50,7 +50,7 @@ include('includes/head.php');
                                         <path fill-rule="evenodd"
                                             d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
                                     </svg>
-                                    Bonjour, <?php echo $_SESSION['username']; ?>
+                                    Bonjour, <?php echo $_SESSION['firstNameUser']; ?>
                                 </button>
                             </a>
                             <a href="deconnexion.php" class="login">
@@ -198,7 +198,7 @@ include('includes/head.php');
                 // Connexion a la base mysql
                 $bdd = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root', '');
                 // On selectionne les trois derniers articles
-                $reponse = $bdd->query('SELECT * FROM actors LIMIT 4 ');
+                $reponse = $bdd->query('SELECT * FROM actors ORDER BY rating_actor DESC LIMIT 4 ');
                 while ($donnees = $reponse->fetch()) {
                 ?>
                 <div class="col p-3">

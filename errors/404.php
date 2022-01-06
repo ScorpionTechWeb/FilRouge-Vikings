@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
 
     <!-- My Custom CSS -->
-    <link href="../css/404.css" rel="stylesheet">
+    <link href="../assets/css/404.css" rel="stylesheet">
 </head>
 
 <section class="page_404">

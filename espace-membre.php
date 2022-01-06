@@ -2,7 +2,7 @@
 // Initialiser la session
 session_start();
 // Vérifiez si l'utilisateur est connecté, sinon redirigez-le vers la page de connexion
-if (!isset($_SESSION["username"])) {
+if (!isset($_SESSION["connected"])) {
     header("Location: login.php");
     exit();
 }
@@ -17,7 +17,7 @@ if (!isset($_SESSION["username"])) {
 
 <body>
     <div class="sucess">
-        <h1>Bienvenue <?php echo $_SESSION['username']; ?></h1>
+        <h1>Bienvenue <?php echo $_SESSION['firstNameUser']; ?></h1>
         <p>C'est votre espace utilisateur, gérez vos informations, vos commentaires, vos articles favoris...</p>
         <ul>
             <a href='infos.php'>Mon profil</a>
@@ -30,5 +30,4 @@ if (!isset($_SESSION["username"])) {
         </ul>
     </div>
 </body>
-
 </html>
