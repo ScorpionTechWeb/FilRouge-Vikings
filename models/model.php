@@ -39,3 +39,10 @@ function getComments($postId)
 
     return $comments;
 }
+
+function getActors()
+{
+    $db = dbConnect();
+    $req = $db->query('SELECT * FROM actors ORDER BY rating_actor DESC LIMIT 4 ');
+    return $req;
+}

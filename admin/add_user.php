@@ -9,7 +9,7 @@
 <body>
     <?php
     // Fichier de configuration
-    require('../includes/config.php');
+    require('./config.php');
     if (isset($_REQUEST['username'], $_REQUEST['email'], $_REQUEST['type'], $_REQUEST['password'])) {
         // récupérer le nom d'utilisateur
         $username = stripslashes($_REQUEST['username']);

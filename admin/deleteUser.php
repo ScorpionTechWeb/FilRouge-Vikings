@@ -1,16 +1,10 @@
 <?php
-// on se connecte à la base de données
-$host = 'localhost';
-$dbname = 'mxbhnrft_projetfil';
-$username = 'mxbhnrft_projetfil';
-$password = 'w*SMh*;4Q*/S2;9h?s';
-
-$dsn = "mysql:host=$host;dbname=$dbname";
-
+//import de la connexion à la bdd
+include('./db.php');   
 $id = $_GET['id'];
 
 // on récupérer tous les utilisateurs
-$sql = "DELETE FROM users WHERE id='$id'";
+$sql = "DELETE FROM users WHERE id_user='$id'";
 
 try {
     $pdo = new PDO($dsn, $username, $password);
@@ -20,6 +14,7 @@ try {
         die('Erreur');
     } else {
         echo "Utilisateur supprimé avec succès.";
+        header("./allUsers.php")
     }
 } catch (PDOException $e) {
     echo $e->getMessage();

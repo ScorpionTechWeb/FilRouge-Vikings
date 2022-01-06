@@ -102,6 +102,7 @@ include('includes/head.php');
                 </nav>
             </div>
         </header>
+
         <!-- Caroussel -->
         <div id="myCarousel" class="carousel slide hidden-xs" data-bs-ride="carousel">
             <div class="carousel-indicators">
@@ -131,6 +132,7 @@ include('includes/head.php');
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
+
         <!-- Histoire -->
         <div id="about"></div>
         <div class="page-header text-center">
@@ -194,48 +196,14 @@ include('includes/head.php');
                 </h3>
             </div>
             <div class="row justify-content-start">
-                <?php
-                // Connexion a la base mysql
-                $bdd = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root', '');
-                // On selectionne les trois derniers articles
-                $reponse = $bdd->query('SELECT * FROM actors ORDER BY rating_actor DESC LIMIT 4 ');
-                while ($donnees = $reponse->fetch()) {
-                ?>
-                <div class="col p-3">
-                    <div class="card" style="width: 18rem;">
-                        <img src="assets/<?php echo $donnees['image_actor']; ?>" class="card-img-top" alt="...">
-                        <div class="card-body-home">
-                            <h5 class="card-title">Acteur: <?php echo $donnees['name_actor']; ?> </h5>
-                            <p class="card-text"><?php echo $donnees['description_actor']; ?>
-                            </p>
-                            <p class="float-start"><?php echo $donnees['name_actor_perso']; ?> -
-                                <?php echo $donnees['rating_actor']; ?> Votes</p>
-                            <div class="float-end">
-                                <a href="vote.php?id=<?php echo $donnees['id_actor']; ?>" class="btn btn-dark">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                        class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                                        <path
-                                            d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z" />
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php
-                }
-                $reponse->closeCursor(); // Termine le traitement de la requête
-                ?>
+                <?php include('actors.php') ?> <!-- On appele la page actors.php qu'affiche tout les personnages -->
             </div>
         </div>
         <div id="blog">
             <div class="page-header text-center">
                 <h1 class="text-center p-3">Le Blog</h1>
-                <h3>
-                    Actualités
-                </h3>
             </div>
-            <?php include('posts.php') ?>
+            <?php include('posts.php') ?> <!-- On appele la page posts.php qu'affiche tout les derni_res articles -->
         </div>
     </main>
     <!-- Pied de page -->
@@ -262,5 +230,4 @@ include('includes/head.php');
     <!-- Mon Custom JS -->
     <script type="text/javascript" src="assets/js/custom.js"></script>
 </body>
-
 </html>
