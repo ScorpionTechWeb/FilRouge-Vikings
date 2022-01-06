@@ -14,12 +14,11 @@
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <!-- My Custom CSS -->
-    <link href="css/styles.css" rel="stylesheet">
-    <link href="css/login.css" rel="stylesheet">
+    <link href="assets/css/styles.css" rel="stylesheet">
+    <link href="assets/css/login.css" rel="stylesheet">
 </head>
 
 <!-- BODY -->
-
 <body>
     <main>
         <!-- Start Navbar -->

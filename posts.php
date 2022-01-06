@@ -1,5 +1,5 @@
 <?php
-require('model.php');
+require('models/model.php');
 
 $posts = getPosts();
 

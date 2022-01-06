@@ -11,7 +11,7 @@ if (!isset($_SESSION["username"])) {
 <html lang="fr">
 
 <head>
-    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
     <title>Espace membre</title>
 </head>
 

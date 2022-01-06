@@ -1,5 +1,5 @@
 <?php
-require('model.php');
+require('models/model.php');
 
 if (isset($_GET['id']) && $_GET['id'] > 0) {
     $post = getPost($_GET['id']);
