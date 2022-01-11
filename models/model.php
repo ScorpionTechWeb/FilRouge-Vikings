@@ -1,23 +1,13 @@
 <?php
 
-// Nouvelle fonction qui nous permet d'éviter de répéter du code
-function dbConnect()
-{
-    try
-    {
-        $db = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root', '');
-        return $db;
-    }
-    catch(Exception $e)
-    {
-        die('Erreur : '.$e->getMessage());
-    }
-}
+// On fait appelle au fichier db.php qui sert à se connecter à la base de données sql
+include('./includes/db.php');
 
 function getPosts()
 {
     $db = dbConnect();
-    $req = $db->query('SELECT id, picture_article, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%imin%ss\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+    $req = $db->query('SELECT id, picture_article, title, content, DATE_FORMAT(creation_date, \'%d/%m/%Y à %Hh%i\') AS creation_date_fr FROM posts ORDER BY creation_date DESC LIMIT 0, 5');
+
     return $req;
 }
 
@@ -44,5 +34,6 @@ function getActors()
 {
     $db = dbConnect();
     $req = $db->query('SELECT * FROM actors ORDER BY rating_actor DESC LIMIT 4 ');
+
     return $req;
 }

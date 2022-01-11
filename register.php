@@ -7,11 +7,6 @@
     -----------------------------------------------------*/
     //création de la session
     session_start();
-    $error = false;
-    if(isset($_SESSION['connected'])) {
-    header("Location: index.php");
-    exit;
-    }   
     /*-----------------------------------------------------
                         Imports :
     -----------------------------------------------------*/
@@ -50,13 +45,12 @@
             echo '<p>l\'utilisateur qui à pour nom : <span>'.$_POST['name_user'].'</span> 
             et prénom : <span>'.$_POST['first_name_user'].'</span> login : 
             <span>'.$_POST['login_user'].'</span> et pour mot de passe : <span>'.md5($_POST['first_name_user']).'
-            </span> à été ajouté !!!</p><div>';           
+            </span> à été ajouté !!!</p><div>';         
         }        
     }
     //test si les champs de formulaire ne sont pas remplis 
     else
     {  
-        $error = true; // on affiche un erreur sur la page de connexion
         //script js
         echo '<script>';
         //script js remplacement du message

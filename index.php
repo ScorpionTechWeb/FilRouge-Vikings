@@ -203,7 +203,7 @@ include('includes/head.php');
             <div class="page-header text-center">
                 <h1 class="text-center p-3">Le Blog</h1>
             </div>
-            <?php include('posts.php') ?> <!-- On appele la page posts.php qu'affiche tout les derni_res articles -->
+            <?php include('posts.php') ?> <!-- On appele la page posts.php qu'affiche tout les dernieres articles -->
         </div>
     </main>
     <!-- Pied de page -->

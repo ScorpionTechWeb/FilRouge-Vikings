@@ -13,8 +13,9 @@
                                             <img src="assets/<?= $data['picture_article'] ?>" />
                                         </a>
                                         <h3>Le <?= $data['creation_date_fr'] ?></h3>
+                                        <h3><?= $data['title'] ?></h3>
                                         <p style="text-align: left; margin-left: 10px;">
-                                            <?= nl2br(htmlspecialchars($data['content'])) ?>
+                                            <?= substr(nl2br(htmlspecialchars($data['content'])),0,300), '....' ?> 
                                         </p>
                                         <a href="post.php?id=<?= $data['id'] ?>">Lire la suite</a>
                                     </div>
