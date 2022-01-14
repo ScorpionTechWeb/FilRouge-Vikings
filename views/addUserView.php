@@ -163,14 +163,12 @@
                         </div>
                         <a href="login.php" class="link">Déjà inscrit?</a>
                     </form>
-                    <?php if($error){ ?>
-                        <div class="error"> Veuillez remplir les champs de formulaire.</div>
-                    <?php } ?>
+                    <p id="message"></p>
                 </div>
             </div>
         </div>
         <?php
-           }
+        }
         ?>
 
     </main>

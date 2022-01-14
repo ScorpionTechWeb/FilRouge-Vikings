@@ -7,19 +7,15 @@
     -----------------------------------------------------*/
     //création de la session
     session_start();
-    if(isset($_SESSION['connected'])) {
-    header("Location: index.php");
-    exit;
-    }   
     /*-----------------------------------------------------
                         Imports :
     -----------------------------------------------------*/        
     //import du model
     include('./models/user.php');
     //import de la connexion à la bdd
-    include('./includes/db.php');    
+    include('./includes/db.php');
     //import de la vue connexion/loginUserView
-    include('./views/loginUserView.php');     
+    include('./views/loginUserView.php');
     /*-----------------------------------------------------
                             Tests :
     -----------------------------------------------------*/    
@@ -27,10 +23,10 @@
     if(!isset($_POST['login_user']) AND !isset($_POST['mdp_user']))
     {   
        //script js récupération du paragraphe #message dans une variable "message"
-       echo '<script>let message = document.querySelector("#message");';
+    echo '<script>let message = document.querySelector("#message");';
        //script js remplacement du message
-       echo 'message.innerHTML = "Veuillez remplir les champs du formulaire";';
-       echo '</script>';
+    echo 'message.innerHTML = "Veuillez remplir les champs du formulaire";';
+    echo '</script>';
     }
     //test si les champs sont complétés
     if(isset($_POST['login_user']) AND isset($_POST['login_user']))
@@ -54,7 +50,9 @@
                 if($_SESSION['connected'])
                 {
                     //redirection vers login.php?connected
-                    header("Location: login.php?connected");
+                    // header("Location: login.php?connected");
+                    // exit();
+                    echo "<script>window.location.href='index.php'</script>";
                 }
             }
             //test mot de passe incorrect
@@ -62,6 +60,7 @@
             {
                 //redirection vers login.php?mdperror
                 header("Location: login.php?mdperror");
+                exit();
             }                  
         }
         //test le compte n'existe pas
@@ -69,6 +68,7 @@
         {
             //redirection vers login.php?cptnoexist
             header("Location: login.php?cptnoexist");
+            exit();
         }
     }
     /*-----------------------------------------------------
@@ -93,9 +93,8 @@
         echo '</script>';
     }
      //test connexion ok
-     if(isset($_GET['connected']))
-     {   
-        
+    if(isset($_GET['connected']))
+    {   
         //script js
         echo '<script>';
         //script js remplacement du message
@@ -111,3 +110,4 @@
         echo 'message.innerHTML = "Déconnecté !!!";';
         echo '</script>';
     }
+?> 
