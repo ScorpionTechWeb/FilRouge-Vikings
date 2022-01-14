@@ -11,7 +11,7 @@
         private $mdp_user;
         private $type_user;
         /*-----------------------------------------------------
-                            Constucteur :
+                            Constructeur :
         -----------------------------------------------------*/        
         public function __construct($name_user, $first_name_user, $login_user, $mdp_user, $type_user)
         {   $this->name_user = $name_user;
@@ -118,12 +118,12 @@
         public function showUser($bdd)
         {
              //récuparation des valeurs de l'objet       
-             $login_user = $this->getLoginUser();        
-             try
-             {                   
+            $login_user = $this->getLoginUser();        
+            try
+            {                   
                 //requête pour stocker le contenu de toute la table le contenu est stocké dans le tableau $reponse
                 $reponse = $bdd->query('SELECT * FROM users WHERE login_user = "'.$login_user.'" 
-                 LIMIT 1');
+                    LIMIT 1');
                 //parcours du résultat de la requête
                 while($donnees = $reponse->fetch())
                 {   
@@ -138,12 +138,12 @@
                         return false;
                     }
                 }                
-             }
-             catch(Exception $e)
-             {
+            }
+            catch(Exception $e)
+            {
              //affichage d'une exception en cas d’erreur
-             die('Erreur : '.$e->getMessage());
-             }        
+            die('Erreur : '.$e->getMessage());
+            }        
         }
         //méthode qui génére les super globales avec les valeurs d'attributs d'un utilisateur en bdd
         public function generateSuperGlobale($bdd)
@@ -156,11 +156,11 @@
                //requête pour stocker le contenu de toute la table le contenu est stocké dans le tableau $reponse
                $reponse = $bdd->query('SELECT * FROM users WHERE login_user = "'.$login_user.'" AND mdp_user = "'.$mdp_user.'" LIMIT 1');
                //parcours du résultat de la requête
-               while($donnees = $reponse->fetch())
-               {   
+                    while($donnees = $reponse->fetch())
+                {   
                   //return $donnees['mdp_user'];
-                   if($login_user == $donnees['login_user'] AND $mdp_user == $donnees['mdp_user'])
-                   {
+                    if($login_user == $donnees['login_user'] AND $mdp_user == $donnees['mdp_user'])
+                {
                         $id =  $donnees['id_user'];
                         $name =  $donnees['name_user'];
                         $fisrtName =  $donnees['first_name_user'];
@@ -175,8 +175,8 @@
                         $_SESSION['mdpUser'] = $mdp;
                         $_SESSION['type_user'] = $type;
                         $_SESSION['connected'] = true;
-                   }
-               }                
+                }
+            }                
             }
             catch(Exception $e)
             {
@@ -184,15 +184,14 @@
             die('Erreur : '.$e->getMessage());
             }   
         }
-         
         //méthode pour tester la connexion d'un utilisateur
         public function userConnnected($bdd)
         {
              //récuparation des valeurs de l'objet       
-             $login_user = $this->getLoginUser();        
-             $mdp_user = $this->getMdpUser();        
-             try
-             {                   
+            $login_user = $this->getLoginUser();        
+            $mdp_user = $this->getMdpUser();        
+            try
+            {                   
                 //requête pour stocker le contenu de toute la table le contenu est stocké dans le tableau $reponse
                 $reponse = $bdd->query('SELECT * FROM users WHERE login_user = "'.$login_user.'" 
                 AND mdp_user = "'.$mdp_user.'" LIMIT 1');
@@ -210,16 +209,16 @@
                         return true;
                     }
                 }                
-             }
-             catch(Exception $e)
-             {
-             //affichage d'une exception en cas d’erreur
-             die('Erreur : '.$e->getMessage());
-             }        
+            }
+                catch(Exception $e)
+            {
+                //affichage d'une exception en cas d’erreur
+                die('Erreur : '.$e->getMessage());
+            }        
         }
          //méthode génération d'un token de connexion
-         public function createToken($bdd)
-         {  
+        public function createToken($bdd)
+        {  
              //récuparation des valeurs de l'objet
             $login_user = $this->getLoginUser();
             $mdp_user = $this->getMdpUser();
@@ -229,20 +228,19 @@
             $token = md5($token);
             //retourne le token 
             return $token;    
-         }
-         //méthode mise à jour des informations d'un utilisateur nom et prénom
-         public function updateUser($bdd)
-         {
+        }
+            //méthode mise à jour des informations d'un utilisateur nom et prénom
+            public function updateUser($bdd)
+        {
 
-         }
-         //méthode mise à jour du login d'un utilisateur
-         public function updateLoginUser($bdd)
-         {
+        }
+            //méthode mise à jour du login d'un utilisateur
+            public function updateLoginUser($bdd)
+        {
 
-         }
-         //méthode mise à jour du mot de passe d'un utilisateur
-         public function updateMdpUser($bdd)
-         {
-
-         }
+        }
+            //méthode mise à jour du mot de passe d'un utilisateur
+            public function updateMdpUser($bdd)
+        {
+    }
     }

@@ -22,7 +22,7 @@
 <body>
     <main>
         <!-- Start Navbar -->
-      <header>
+    <header>
             <div class="container">
                 <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
                     <a class="navbar-brand" href="#">
