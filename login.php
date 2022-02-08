@@ -52,14 +52,15 @@
                     //redirection vers login.php?connected
                     // header("Location: login.php?connected");
                     // exit();
-                    echo "<script>window.location.href='index.php'</script>";
+                    echo "<script>window.location.href='login.php?connected'</script>";
                 }
             }
             //test mot de passe incorrect
             else
             {
                 //redirection vers login.php?mdperror
-                header("Location: login.php?mdperror");
+                // header("Location: login.php?mdperror");
+                echo "<script>window.location.href='login.php?mdperror'</script>";
                 exit();
             }                  
         }
@@ -67,7 +68,8 @@
         else
         {
             //redirection vers login.php?cptnoexist
-            header("Location: login.php?cptnoexist");
+            // header("Location: login.php?cptnoexist");
+            echo "<script>window.location.href='login.php?cptnoexist'</script>";
             exit();
         }
     }
@@ -98,7 +100,7 @@
         //script js
         echo '<script>';
         //script js remplacement du message
-        echo 'message.innerHTML = "Connecté !!!";';
+        echo 'message.innerHTML = "Vous êtes bien connecté !!!";';
         echo '</script>';   
     }
     //test deconnexion
@@ -107,7 +109,7 @@
         //script js
         echo '<script>';
         //script js remplacement du message
-        echo 'message.innerHTML = "Déconnecté !!!";';
+        echo 'message.innerHTML = "Vous êtes bien déconnecté !!!";';
         echo '</script>';
     }
 ?> 
