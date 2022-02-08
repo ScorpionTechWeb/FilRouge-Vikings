@@ -9,6 +9,5 @@ if (isset($_GET['id']) && $_GET['id'] > 0) {
     require('views/postView.php');
 }
 else {
-    echo 'Erreur : aucun identifiant de billet envoyé';
+    echo 'Erreur : aucun identifiant de post envoyé';
 }
-

@@ -5,7 +5,7 @@ function dbConnect()
 {
     try
     {
-        $db = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root', '');
+        $db = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root', 'tarbes65');
         return $db;
     }
     catch(Exception $e)
@@ -14,7 +14,7 @@ function dbConnect()
     }
 }
     //connexion à la base de données
-    $bdd = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root','', 
+    $bdd = new PDO('mysql:host=localhost;dbname=filrouge;charset=utf8', 'root','tarbes65', 
     array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 ?>
 

@@ -2,7 +2,7 @@
 // Informations d'identification à la base MYSQL
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'tarbes65');
 define('DB_NAME', 'filrouge');
 
 // Connexion à la base de données MySQL
